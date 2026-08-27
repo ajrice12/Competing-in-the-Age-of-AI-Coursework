@@ -11,6 +11,14 @@ This page is written in **Quarto** and is published straight to GitHub.
 - It renders to a real website
 - The source is plain text, so git tracks every change cleanly
 
-'''{python}
-print(:Hello from a rendered code chunk!)
-'''
+```{python}
+print("Hello from a rendered code chunk!")
+```
+
+## Load 
+```{python}
+import pandas as pd
+import plotly.express as px
+
+sales = pd.read_csv("campus_cafe_sales.csv")
+```
