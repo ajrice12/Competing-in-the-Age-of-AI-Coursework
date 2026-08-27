@@ -1,0 +1,16 @@
+---
+title: "My First Quarto Site"
+author: "Austin Rice"
+format: html
+---
+
+## Welcome
+
+This page is written in **Quarto** and is published straight to GitHub.
+
+- It renders to a real website
+- The source is plain text, so git tracks every change cleanly
+
+'''{python}
+print(:Hello from a rendered code chunk!)
+'''
