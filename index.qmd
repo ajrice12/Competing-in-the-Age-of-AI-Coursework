@@ -1,4 +1,4 @@
----
+﻿---
 title: "My First Quarto Site"
 author: "Austin Rice"
 format: html
@@ -15,7 +15,8 @@ This page is written in **Quarto** and is published straight to GitHub.
 print("Hello from a rendered code chunk!")
 ```
 
-## Load 
+## Load
+
 ```{python}
 import pandas as pd
 import plotly.express as px
@@ -27,16 +28,62 @@ sales.head()
 
 ```{python}
 #| echo: false
-print("This line was produced by python when teh document was made but the code is hidden")
-```
 
+print("This line was produced by Python when the document was made, but the code is hidden.")
+```
 
 ```{python}
 #| include: false
 
-#Runs silently but sales appears here for everything chunk below it
+# Runs silently, but sales remains available for all chunks below it
 sales = pd.read_csv("campus_cafe_sales.csv")
 ```
 
-## Callout 
+## Inspect
 
+```{python}
+print("Rows and columns:", sales.shape)
+print("Cafes:", sales["cafe"].unique())
+
+sales.dtypes
+```
+
+## Calculate Revenue and Filter by Coffee
+
+```{python}
+sales["revenue"] = sales["units_sold"] * sales["unit_price"]
+
+coffee = sales[sales["category"] == "Coffee"]
+
+coffee.head()
+```
+
+## Plot
+
+```{python}
+daily = coffee.groupby(
+    ["date", "cafe"],
+    as_index=False
+)["revenue"].sum()
+
+px.line(
+    daily,
+    x="date",
+    y="revenue",
+    color="cafe",
+    markers=True,
+    title="Daily Coffee Revenue by Cafe",
+    labels={
+        "date": "Date",
+        "revenue": "Revenue ($)"
+    }
+)
+```
+
+::: {.callout-note}
+
+## Why I Filtered to Coffee
+
+I filtered the data to coffee so I could compare revenue for the same product category across the three cafes without mixing in products with different prices and sales patterns.
+
+:::
