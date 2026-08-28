@@ -5,7 +5,7 @@ render:
   - index.qmd
 
 resources:
-  - campus_cafe_sales.csv
+  - data/campus_cafe_sales.csv
 
 format:
   html:
