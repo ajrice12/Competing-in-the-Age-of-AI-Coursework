@@ -1,11 +1,13 @@
-project: 
-        output-dir: docs
-        render: 
-            - Index.qmd
-        
+project:
+  output-dir: docs
+
+render:
+  - index.qmd
+
+resources:
+  - campus_cafe_sales.csv
+
 format:
-    html:
-        theme: cosmo
-        css: styles.css
-
-
+  html:
+    theme: cosmo
+    css: styles.css
