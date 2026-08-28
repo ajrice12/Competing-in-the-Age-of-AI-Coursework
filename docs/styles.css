@@ -1,0 +1,36 @@
+:root { --ink: #24323d; --paper: #f7f4ee; --panel: #ffffff; --output: #edf2f1; --accent: #b45309; }
+
+body { background: var(--paper); color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: 16px; line-height: 1.6; }
+
+#quarto-document-content { max-width: 50rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+#title-block-header { margin-bottom: 3rem; border-bottom: 3px solid var(--accent); padding-bottom: 1.25rem; }
+
+h1, h2 { color: var(--ink); line-height: 1.2; }
+
+h1 { font-size: 2.4rem; letter-spacing: 0; }
+
+h2 { margin: 2.5rem 0 1rem; border-left: 5px solid var(--accent); padding-left: 0.75rem; font-size: 1.7rem; }
+
+.cell { margin: 1.5rem 0; }
+
+.cell-output-stdout, .dataframe { background: var(--output); border: 1px solid #c8d4d1; border-radius: 4px; }
+
+.cell-output-stdout pre, pre.sourceCode { padding: 1rem; overflow-x: auto; font-family: Consolas, "Courier New", monospace; font-size: 0.9rem; line-height: 1.5; }
+
+table.dataframe { display: block; width: 100%; overflow-x: auto; background: var(--panel); border-collapse: collapse; }
+
+.dataframe th, .dataframe td { padding: 0.55rem 0.7rem; white-space: nowrap; }
+
+@media (max-width: 600px) {
+	#quarto-document-content { padding: 1.25rem 1rem 3rem; }
+
+	h1 { font-size: 2rem; }
+}
+
+code.sourceCode {
+    background-color: var(--output);
+    border: 1px solid #c8d4d1;
+    padding: 2px;
+    border-radius: 4px;
+}

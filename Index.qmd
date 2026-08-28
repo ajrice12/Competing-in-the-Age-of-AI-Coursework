@@ -21,4 +21,22 @@ import pandas as pd
 import plotly.express as px
 
 sales = pd.read_csv("campus_cafe_sales.csv")
+
+sales.head()
 ```
+
+```{python}
+#| echo: false
+print("This line was produced by python when teh document was made but the code is hidden")
+```
+
+
+```{python}
+#| include: false
+
+#Runs silently but sales appears here for everything chunk below it
+sales = pd.read_csv("campus_cafe_sales.csv")
+```
+
+## Callout 
+
