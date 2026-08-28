@@ -21,7 +21,7 @@ print("Hello from a rendered code chunk!")
 import pandas as pd
 import plotly.express as px
 
-sales = pd.read_csv("campus_cafe_sales.csv")
+sales = pd.read_csv("data/campus_cafe_sales.csv")
 
 sales.head()
 ```
@@ -36,7 +36,7 @@ print("This line was produced by Python when the document was made, but the code
 #| include: false
 
 # Runs silently, but sales remains available for all chunks below it
-sales = pd.read_csv("campus_cafe_sales.csv")
+sales = pd.read_csv("data/campus_cafe_sales.csv")
 ```
 
 ## Inspect
@@ -87,3 +87,4 @@ px.line(
 I filtered the data to coffee so I could compare revenue for the same product category across the three cafes without mixing in products with different prices and sales patterns.
 
 :::
+
